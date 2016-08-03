@@ -19,7 +19,7 @@ cd zhihudaily-ionic2
 npm install
 ionic serve
 ```
-
+注：如果是chrome浏览器打开的话，可以装一个允许跨域的插件，不然会无法获取api信息，我装的是Allow-Control-Allow-Origin。
 ## to do
 * 收藏
 * 上拉加载代替按键加载
