@@ -1,0 +1,33 @@
+<!--<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!story">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <!--<button>shoucang</button>
+    <ion-title>{{story.title}}</ion-title>
+  </ion-navbar>
+</ion-header>-->
+
+<ion-content>
+ <div *ngIf="story">
+   <div class="top-pic">
+    <div class="top-title">{{story.title}}</div>
+    <img class="top-image" src="//images.weserv.nl/?url={{story.topImage}}" alt="" *ngIf="story.topImage">
+    <span class="top-pic-info">{{story.topImage_source}}</span>
+  </div>
+    <div innerHTML='{{story.body}}'>
+
+    </div>
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-navbar>
+    <button menuToggle *ngIf="!story">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <button clear (click)="collect($event)"><ion-icon name='star-outline'></ion-icon></button>
+    <button clear><ion-icon name='arrow-down'></ion-icon></button>
+    <button clear><ion-icon name='arrow-up'></ion-icon></button>
+    </ion-navbar>
+</ion-footer>

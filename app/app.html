@@ -1,0 +1,40 @@
+<ion-menu [content]="content">
+
+  <ion-toolbar primary>
+    <ion-title>知乎日报</ion-title>
+  </ion-toolbar>
+
+  <ion-content>
+    <ion-buttons>
+        <button clear block (click)="login()"><ion-icon name="person"></ion-icon>About</button>
+    </ion-buttons>
+        <ion-buttons>
+        <button clear (click)='collection()'><ion-icon name="star"></ion-icon>收藏</button>
+        <button clear><ion-icon name="mail"></ion-icon>消息</button>
+        <button clear><ion-icon name="settings"></ion-icon>设置</button>
+    </ion-buttons>
+    <ion-list>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+<ion-toolbar position="bottom">
+  <ion-buttons start>
+    <button royal>
+      <ion-icon name="download"></ion-icon>
+      离线
+    </button>
+  </ion-buttons>
+  <ion-buttons end>
+    <button royal>
+      <ion-icon name="moon"></ion-icon>
+      夜间
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

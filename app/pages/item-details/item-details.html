@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{selectedItem.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+ <div *ngIf="selectedItem" class="noPadding">
+   <img src="{{selectedItem.background}}" alt="" class="top-pic">
+    <!--<b>{{selectedItem.title}}</b>-->
+    <!--<ion-icon name="{{selectedItem.icon}}"></ion-icon>-->
+      <ion-item *ngFor="let story of selectedItem.stories"  (click)="storyShow($event, story)">
+      <!--<ion-thumbnail item-left>
+        <img src="{{story.images}}" alt="">
+      </ion-thumbnail>-->
+      {{story.title}}
+      </ion-item>
+  </div>
+</ion-content>
